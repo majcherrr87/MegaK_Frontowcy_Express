@@ -1,32 +1,15 @@
 const express = require("express");
-const { readFile, writeFile } = require("fs").promises;
+
+const { nameRouter } = require("./routes/name");
+const { voteRouter } = require("./routes/voteRouter");
+const { calcRouter } = require("./routes/calc");
 
 const app = express();
+app.use(express.static("public"));
+app.use(express.json());
 
-app.get("/name/set/:name", async (req, res) => {
-  const name = req.params.name;
-  await writeFile("name.txt", name, "utf-8");
-  res.send(`Imie zostało zapisane ${name}`);
-});
+app.use("/name", nameRouter);
+app.use("/vote", voteRouter);
+app.use("/calc", calcRouter);
 
-app.get("/name/show", async (req, res) => {
-  showName = await readFile("name.txt", "utf-8");
-  res.send(`Zapisane Imię to ${showName}`);
-});
-
-app.get("/name/check", async (req, res) => {
-  try {
-    await readFile("name.txt", "utf-8");
-    res.send("There is a name saved");
-  } catch (e) {
-    res.send("There is no name");
-  }
-});
-
-app.get("/:a/:b", (req, res) => {
-  const { a, b } = req.params;
-  const sum = Number(a) + Number(b);
-  res.send(`${a} + ${b} = ${sum}`);
-});
-
-app.listen(3000);
+app.listen(3000, "localhost");
