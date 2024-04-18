@@ -25,7 +25,14 @@ app.use("/calc", calcRouter);
 app.use("/cookie", cookieRouter);
 
 app.get("/hi", (req, res) => {
-  res.render("home");
+  res.render("home", {
+    person: {
+      name: "Kot",
+      surname: "Lisa",
+      age: 2,
+    },
+    data: [1987, 1988, 1989, 1990],
+  });
 });
 
 app.listen(3000, "localhost");

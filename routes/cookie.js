@@ -7,7 +7,7 @@ cookieRouter
     const { name } = req.body;
     res
       .cookie("name", name, { maxAge: 30 * 24 * 60 * 60 * 1000 })
-      .send(`Imię ${name} zostało zapisane`);
+      .render("cookie-set");
   })
   .get("/show", (req, res) => {
     const { name } = req.cookies;
