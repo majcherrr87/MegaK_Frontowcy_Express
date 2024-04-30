@@ -10,3 +10,30 @@ img {
   padding: 15px;
   background-color: rgb(247, 170, 170);
 }
+.btn {
+  background: #b0a797;
+  color: black;
+  text-decoration: none;
+  padding: 0px 5px;
+  border: 1px solid #463412;
+  margin: 3px;
+  border-radius: 3px;
+  font-weight: bold;
+  display: inline-block;
+}
+.btn-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-small {
+  padding: 0 5px;
+}
+.btn-big {
+  font-size: 110%;
+  padding: 10px 20px;
+}
+.cart-img {
+  width: 32px;
+  vertical-align: middle;
+}

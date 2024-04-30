@@ -1,6 +1,6 @@
-function renderErrorMessage(res, addonName, description) {
+function renderErrorMessage(res, description) {
   return res.render("error", {
-    description: `${addonName} ${description}`,
+    description,
   });
 }
 

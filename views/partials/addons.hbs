@@ -8,7 +8,14 @@
       -
       {{pricify (findPrice @root.addons this)}}
       PLN
-      <a href="/configurator/delete-addon/{{this}}">Delete</a></li>
+      {{log noDeleteBtn}}
+      {{#if noDeleteBtn}}
+        <a
+          class="btn btn-small"
+          href="/configurator/delete-addon/{{this}}"
+        >Delete</a>
+      {{/if}}
+    </li>
   {{/each}}
 
 </ul>

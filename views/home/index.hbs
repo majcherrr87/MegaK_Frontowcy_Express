@@ -9,14 +9,18 @@
 
     
     {{#each addons}}
-        {{#if (isNotInArray @root.cookie.addons this.[0])}}
-            <a href="/configurator/add-addon/{{this.[0]}}">Add {{this.[0]}} for {{this.[1]}} PLN</a>
-        {{/if}}
+            <a class="btn
+            {{#if (isInArray @root.cookie.addons this.[0] )}}btn-disabled{{/if}}
+            " href="/configurator/add-addon/{{this.[0]}}">Add {{this.[0]}} for {{this.[1]}} PLN</a>
     {{/each}}
 
 {{#if cookie.base}}
     {{> cookie-preview}}
     {{> addons}}
+    <a class="btn btn-big" href="/order/summary">
+    <img src="/assets/images/koszyk.png" class="cart-img" alt="">
+     Order now!
+     </a>
 {{else}}
     <hr>
     <p><strong>Please select base of your cookie to se it`s preview and price summary.</strong></p>
