@@ -9,6 +9,7 @@ const handelbarsHelpers = {
     return price;
   },
   pricify: (price) => price.toFixed(2),
+  isNotInArray: (array, element) => !array.includes(element),
 };
 
 module.exports = {
