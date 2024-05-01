@@ -10,6 +10,11 @@ img {
   padding: 15px;
   background-color: rgb(247, 170, 170);
 }
+.success {
+  border: 1px solid green;
+  padding: 15px;
+  background-color: rgb(155, 251, 155);
+}
 .btn {
   background: #b0a797;
   color: black;
